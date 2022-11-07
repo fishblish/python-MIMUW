@@ -1,0 +1,19 @@
+import random
+
+n=int(input("Ile losowań? \n"))
+krok=int(input("Ile kroków? \n"))
+w=0
+poza=0
+
+for i in range(0,n):
+    x=random.uniform(0,1)
+    y=random.uniform(0,1)
+    if(x**2+y**2<1):
+        w=w+1
+    else:
+        poza=poza+1
+    if(i%krok==0):
+        print("Nastąpiło ",i, " losowań. Przybliżenie liczby pi to ", w/(w+poza)*4, "\n" )
+
+pi=w/(w+poza)*4
+print(pi)
