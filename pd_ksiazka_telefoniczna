@@ -1,0 +1,19 @@
+phone_book={}
+phone_book["Mama"]=602571076
+phone_book["Antek Misztal"] = 514160042
+phone_book["Madzia"] = (784190814, 609769232)
+print(phone_book)
+
+print(phone_book["Mama"])
+del phone_book["Mama"]
+print(phone_book)
+
+
+phone_book[("Ania","Tymicka")] = 7382927
+print(phone_book)
+
+phone_book["Ola"] = [("prywatny", 38372986), ("praca", 497236)]
+print(phone_book)
+
+for i in phone_book.values():
+  print(i)

@@ -1,0 +1,14 @@
+def szukaj_osobistosci(M):
+  for i in range(len(M)):
+    a=list('1' * len(M[0]))
+    if M[i]== [int(x) for x in a]:
+      flaga=1
+      for j in range(len(M[0])):
+        if M[j][i]==1 and j!=i:
+          flaga=0
+      if(flaga==1):
+        print('osoba o indeksie', i, 'jest osobistością')
+
+M=[[1,1,1],[0,1,1],[0,1,1]]
+szukaj_osobistosci(M)
+

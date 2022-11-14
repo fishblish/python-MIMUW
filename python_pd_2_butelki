@@ -1,0 +1,33 @@
+import random
+
+lista1=[]
+for i in range(0,1024):
+    lista1.append(bin(i)[2:])
+    if(len(lista1[i])<10):
+       lista1[i]=lista1[i] + '0' * (10-len(str(lista1[i])))
+
+licznik_duzy=0
+m=10
+for j in range (0, m):
+    zatruta = random.randint(1,1000)
+
+    print('Wylosowano butelkę o numerze', zatruta,'.')
+    print('Piją z niej gracze o numerach:')
+
+    licznik=0
+    for i in range(0,10):
+        if(lista1[zatruta][i]=='1'):
+            print(i)
+            licznik=licznik+1
+    print('Czyli', licznik, 'graczy')
+    licznik_duzy=licznik_duzy+licznik
+print('Średnio piło',licznik_duzy/m, 'graczy.')
+
+
+srednia=0
+for i in range(0,1000):
+    for j in range(0,10):
+        if(lista1[i][j]=='1'):
+           srednia+=1
+
+print(srednia/1000)
