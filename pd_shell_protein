@@ -1,0 +1,11 @@
+grep -o ">" NC_010437.faa | wc -l
+grep -o ">" NC_002306.faa | wc -l
+
+grep -A 20 "spike" NC_010437.faa > output1.txt
+grep -A 21 "spike" NC_002306.faa > output2.txt
+
+grep -v "spike" output1.txt > output11.txt
+grep -v "spike" output2.txt > output22.txt
+
+diff output11.txt output22.txt
+
