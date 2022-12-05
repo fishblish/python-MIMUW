@@ -1,0 +1,7 @@
+#generowanie tabeli 
+$  python3 -m cProfile -s tottime dijkstra.py
+
+#generowanie grafu
+$ python3 -m cProfile -o out.pstat dijkstra.py
+$ python3 -m gprof2dot -f pstats out.pstat | dot -Tpng -o output.png
+$ xdg-open output.png
