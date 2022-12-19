@@ -1,0 +1,26 @@
+import csv
+import numpy as np
+
+import os
+os.path.abspath(os.getcwd())
+
+x=np.load('sample_treated.npz')
+
+lst = x.files
+print(lst)
+
+for item in lst:
+    print(item)
+    print(x[item])
+
+print(np.shape(x[lst[1]])[1])
+
+for wiersz in range(0, np.shape(x[lst[1]])[0]):
+    flaga=0
+    for kolumna in range(0, np.shape(x[lst[1]])[1]-1):
+        if(x['outputs'][wiersz][kolumna+1]!=2*x['outputs'][wiersz][kolumna]):
+            flaga=1
+    if(flaga==0):
+        print('struktura ', wiersz, ' rośnie podwójnie')
+    else:
+        print('struktura ', wiersz, ' nie rośnie podwójnie')
