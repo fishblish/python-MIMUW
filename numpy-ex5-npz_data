@@ -1,3 +1,5 @@
+#zrozumiałam polecenie tak, że rozmiar struktury ma się podwajać w każdym kroku
+
 import csv
 import numpy as np
 
